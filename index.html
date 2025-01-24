@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MySpace Coin - Official Memecoin</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /************************************
+     * BASIC RESET & GLOBAL STYLES
+     ************************************/
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      font-family: 'Open Sans', sans-serif;
+      height: 100%;
+      overflow-x: hidden;
+      background: #000; /* Black background to match MySpace logo theme */
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    /************************************
+     * KEYFRAMES FOR ANIMATIONS
+     ************************************/
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /************************************
+     * HERO / TOP SECTION
+     ************************************/
+    .hero-section {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      text-align: center;
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    .logo {
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .logo:hover {
+      transform: scale(1.08);
+    }
+    .logo img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .headline {
+      max-width: 650px;
+      margin: 1rem auto;
+      line-height: 1.7;
+      font-size: 1.1rem;
+      color: #fff;
+    }
+
+    /* Container for contract address + Buy button */
+    .hero-buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* Contract address styling */
+    .contract-address {
+      display: inline-block;
+      background: #333; /* Subtle contrast behind text */
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .contract-address:hover {
+      background: #444;
+    }
+
+    /* Buy button: white background, black text */
+    .buy-btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #fff;
+      color: #000;
+      border-radius: 4px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .buy-btn:hover {
+      background: #ddd;
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    /************************************
+     * LINK SECTION ABOVE FOOTER
+     ************************************/
+    .links-above-footer {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem; /* Spacing above the footer */
+      /* Fade up animation applied to entire container */
+      opacity: 0;          /* Start invisible */
+      transform: translateY(20px); /* Slightly down */
+      animation: fadeUp 1s ease 0.8s forwards; /* Delayed fade-up */
+    }
+    .links-above-footer .circle-link {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .links-above-footer .circle-link:hover {
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+    .links-above-footer .circle-link img {
+      max-width: 70%;
+      max-height: 70%;
+      object-fit: contain;
+    }
+
+    /************************************
+     * FOOTER
+     ************************************/
+    footer {
+      position: relative;
+      min-height: 15vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .footer-box {
+      width: 60px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      margin-top: 2rem;
+      animation: fadeUp 1s ease 0.6s forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    /************************************
+     * RESPONSIVE ADJUSTMENTS
+     ************************************/
+    @media (max-width: 480px) {
+      .logo img {
+        width: 120px;
+        height: 120px;
+      }
+      .headline {
+        font-size: 1rem;
+      }
+      .hero-buttons {
+        flex-direction: column;
+      }
+      .links-above-footer .circle-link {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header class="hero-section" id="top">
+    <div class="logo">
+      <!-- MySpace black & white logo -->
+      <img src="myspace.png" alt="MySpace Logo">
+    </div>
+
+    <div class="content">
+      <p class="headline">
+        We started <strong>MySpace</strong> with a vision to bring people together through personalized 
+        profiles, music discovery, and the freedom to express oneself online. Over time, it became a 
+        cultural phenomenon, kick-starting music careers, forging friendships, and creating a revolution 
+        in how we share our lives on the internet.
+      </p>
+
+      <p class="headline">
+        Now, <strong>MySpace Coin</strong> pays homage to the nostalgia and community spirit that defined 
+        MySpace. Developer tokens will never be sold, and all proceeds go directly to 
+        <strong>Music Unites</strong>—an organization dedicated to supporting music education and emerging 
+        artists around the globe. Join us in celebrating creativity, collaboration, and the 
+        limitless power of good music.
+      </p>
+
+      <!-- CEO Signature -->
+      <p class="headline" style="margin-top: 1rem; font-style: italic;">
+        — Tim Vanderhook, CEO
+      </p>
+
+      <div class="hero-buttons">
+        <div class="contract-address" id="contractAddress">
+          0x1234567890ABCDEF1234567890abcdef12345678
+        </div>
+        <a href="#" class="buy-btn" id="buyBtn">Buy Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Circular links with fade-up animation, ABOVE the footer -->
+  <div class="links-above-footer">
+    <a href="https://pump.fun" target="_blank" rel="noopener noreferrer" class="circle-link">
+      <img src="pump.png" alt="Pump.fun" />
+    </a>
+    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="circle-link">
+      <img src="twitter.png" alt="Twitter" />
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-box"></div>
+  </footer>
+
+  <!-- JavaScript for copy-to-clipboard & Buy button -->
+  <script>
+    // Copy address to clipboard when clicked
+    const contractEl = document.getElementById('contractAddress');
+    contractEl.addEventListener('click', () => {
+      const addressText = contractEl.textContent.trim();
+      navigator.clipboard.writeText(addressText)
+        .then(() => {
+          alert('Contract address copied to clipboard!');
+        })
+        .catch(err => console.error('Failed to copy text: ', err));
+    });
+
+    // Buy button action
+    const buyBtn = document.getElementById('buyBtn');
+    buyBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Replace with your real link to a DEX or purchase page:
+      alert('Redirecting to your DEX or purchase page here...');
+    });
+  </script>
+</body>
+</html>
