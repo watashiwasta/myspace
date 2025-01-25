@@ -4,12 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MySpace Coin - Official Memecoin</title>
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /************************************
-     * BASIC RESET & GLOBAL STYLES
-     ************************************/
     * {
       margin: 0;
       padding: 0;
@@ -19,14 +15,11 @@
       font-family: 'Open Sans', sans-serif;
       height: 100%;
       overflow-x: hidden;
-      background: #000; /* Black background to match MySpace logo theme */
+      background: #000;
       color: #fff;
       scroll-behavior: smooth;
     }
 
-    /************************************
-     * KEYFRAMES FOR ANIMATIONS
-     ************************************/
     @keyframes fadeIn {
       0% {
         opacity: 0;
@@ -48,9 +41,6 @@
       }
     }
 
-    /************************************
-     * HERO / TOP SECTION
-     ************************************/
     .hero-section {
       min-height: 70vh;
       display: flex;
@@ -86,7 +76,6 @@
       color: #fff;
     }
 
-    /* Container for contract address + Buy button */
     .hero-buttons {
       margin-top: 1.5rem;
       display: flex;
@@ -95,10 +84,9 @@
       gap: 1rem;
     }
 
-    /* Contract address styling */
     .contract-address {
       display: inline-block;
-      background: #333; /* Subtle contrast behind text */
+      background: #333;
       padding: 0.5rem 1rem;
       border-radius: 4px;
       font-size: 0.9rem;
@@ -110,7 +98,6 @@
       background: #444;
     }
 
-    /* Buy button: white background, black text */
     .buy-btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
@@ -126,18 +113,14 @@
       transform: translateY(-2px) scale(1.05);
     }
 
-    /************************************
-     * LINK SECTION ABOVE FOOTER
-     ************************************/
     .links-above-footer {
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin-bottom: 2rem; /* Spacing above the footer */
-      /* Fade up animation applied to entire container */
-      opacity: 0;          /* Start invisible */
-      transform: translateY(20px); /* Slightly down */
-      animation: fadeUp 1s ease 0.8s forwards; /* Delayed fade-up */
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease 0.8s forwards;
     }
     .links-above-footer .circle-link {
       width: 60px;
@@ -161,9 +144,6 @@
       object-fit: contain;
     }
 
-    /************************************
-     * FOOTER
-     ************************************/
     footer {
       position: relative;
       min-height: 15vh;
@@ -182,9 +162,6 @@
       transform: translateY(20px);
     }
 
-    /************************************
-     * RESPONSIVE ADJUSTMENTS
-     ************************************/
     @media (max-width: 480px) {
       .logo img {
         width: 120px;
@@ -205,10 +182,8 @@
 </head>
 <body>
 
-  <!-- Hero Section -->
   <header class="hero-section" id="top">
     <div class="logo">
-      <!-- MySpace black & white logo -->
       <img src="myspace.png" alt="MySpace Logo">
     </div>
 
@@ -228,7 +203,6 @@
         limitless power of good music.
       </p>
 
-      <!-- CEO Signature -->
       <p class="headline" style="margin-top: 1rem; font-style: italic;">
         — Tim Vanderhook, CEO
       </p>
@@ -237,29 +211,25 @@
         <div class="contract-address" id="contractAddress">
           EqWkfrVijbQTS4aRjhD3UwCBCPXufvgMMcQNoJJxpump
         </div>
-        <a href="#" class="buy-btn" id="buyBtn">Buy Now</a>
+        <a href="https://pump.fun/coin/EqWkfrVijbQTS4aRjhD3UwCBCPXufvgMMcQNoJJxpump" class="buy-btn" id="buyBtn">Buy Now</a>
       </div>
     </div>
   </header>
 
-  <!-- Circular links with fade-up animation, ABOVE the footer -->
   <div class="links-above-footer">
     <a href="https://pump.fun/coin/EqWkfrVijbQTS4aRjhD3UwCBCPXufvgMMcQNoJJxpump" target="_blank" rel="noopener noreferrer" class="circle-link">
       <img src="pump.png" alt="Pump.fun" />
     </a>
-    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="circle-link">
+    <a href="https://x.com/TimVanderhook" target="_blank" rel="noopener noreferrer" class="circle-link">
       <img src="twitter.png" alt="Twitter" />
     </a>
   </div>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-box"></div>
   </footer>
 
-  <!-- JavaScript for copy-to-clipboard & Buy button -->
   <script>
-    // Copy address to clipboard when clicked
     const contractEl = document.getElementById('contractAddress');
     contractEl.addEventListener('click', () => {
       const addressText = contractEl.textContent.trim();
@@ -270,12 +240,10 @@
         .catch(err => console.error('Failed to copy text: ', err));
     });
 
-    // Buy button action
     const buyBtn = document.getElementById('buyBtn');
     buyBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      // Replace with your real link to a DEX or purchase page:
-      alert('Redirecting to your DEX or purchase page here...');
+      window.location.href = 'https://pump.fun/coin/EqWkfrVijbQTS4aRjhD3UwCBCPXufvgMMcQNoJJxpump';
     });
   </script>
 </body>
